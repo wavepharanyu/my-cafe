@@ -19,7 +19,7 @@ const Login = () => {
         <Header/>
           <div className='container w-25 mb-5'>
             <h1 className='mb-3'>เข้าสู่ระบบ</h1>
-            <p className='text-danger title'>*กรอกคำว่า "admin" ในช่อง password (username อะไรก็ได้) </p>
+            {/* <p className='text-danger title'>*กรอกคำว่า "admin" ในช่อง password (username อะไรก็ได้) </p> */}
             <form onSubmit={(e)=>submitForm(e,()=>navigate('/products'))}>
               <div className='form-group mb-3'>
                   <label className='title mb-1'>Username</label>
