@@ -5,7 +5,7 @@ import { getUser, logout } from '../services/authorize'
 const Header = () => {
     const [date, setDate] = useState(new Date())
     
-    const navigate = useNavigate()
+    const navigatea = useNavigate()
 
     const style = { height : "70px", marginBottom: "5px" }
 

@@ -18,6 +18,9 @@ mongoose.connect(process.env.DATABASE,{
 
 
 //middleware
+app.get("/", (req,res) => {
+    res.json('My Cafe')
+})
 app.use(express.json())
 app.use(cors())
 app.use(morgan("dev"))

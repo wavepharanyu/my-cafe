@@ -1,6 +1,7 @@
 const slugify = require("slugify")
 const Products = require("../models/product")
 const { v4: uuidv4 } = require('uuid')
+const axios = require('axios')
 
 
 exports.create = (req,res) => {
@@ -49,7 +50,7 @@ exports.remove = (req,res) => {
     })
 }  
 
-exports.getSingleProduct = (req,res) => {
+exports.getSingleProduct = async(req,res) => {
     const {_id} = req.params
     Products.findOne({_id}).then((product)=>{
         res.json(product)
