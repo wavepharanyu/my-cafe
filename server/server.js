@@ -23,6 +23,9 @@ app.use(cors())
 app.use(morgan("dev"))
 
 //route
+app.get('/', (req,res) => {
+    res.json("My Cafe")
+})
 app.use('/api',productRoute)
 app.use('/api',orderRoute)
 app.use('/api',authRoute)
