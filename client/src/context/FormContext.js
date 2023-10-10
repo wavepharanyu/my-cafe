@@ -19,6 +19,7 @@ const FormProvider = ({children}) => {
     
     const createProduct = (e) => {
         const {productName,unitPrice,thumbnail} = state
+        axios.defaults.withCredentials = true
         e.preventDefault();
         axios.post(`${process.env.REACT_APP_API}/product/create`,
             {productName,unitPrice,thumbnail},
@@ -47,6 +48,7 @@ const FormProvider = ({children}) => {
 
     const updateProduct = (e,id) => {
         const {productName,unitPrice,thumbnail} = state
+        axios.defaults.withCredentials = true
         e.preventDefault();
         axios.put(`${process.env.REACT_APP_API}/product/${id}`,
             {productName,unitPrice,thumbnail},
@@ -74,6 +76,7 @@ const FormProvider = ({children}) => {
     }
 
     const fetchSingleProduct = (_id) => {
+        axios.defaults.withCredentials = true
         axios.get(`${process.env.REACT_APP_API}/product/${_id}`)
         .then(res=>dispatch({type:"FETCH_PRODUCT",payload: res.data}))
         .catch(err=>alert(err))

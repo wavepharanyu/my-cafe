@@ -32,7 +32,7 @@ const AuthProvider = ({children}) => {
 
     const submitForm = (e,next) => {
         const { username, password } = state
-
+        axios.defaults.withCredentials = true
         e.preventDefault();
         axios.post(`${process.env.REACT_APP_API}/login`,{username,password})
         .then(res=>{
