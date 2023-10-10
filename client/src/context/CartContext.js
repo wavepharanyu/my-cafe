@@ -50,7 +50,7 @@ const CartProvider = ({children}) => {
 
     const onConfirmOrder = () => {
         let { CartList, totalPrice } = state
-        axios.defaults.withCredentials = true
+        //axios.defaults.withCredentials = true
         axios.post(`${process.env.REACT_APP_API}/order/create`,{orderedDate: new Date(), totalPrice, orders:CartList})
             .then(res => {
                 Swal.fire(

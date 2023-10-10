@@ -20,13 +20,13 @@ const ProductProvider = ({children}) => {
     
     const fetchProduct = () => {
         dispatch({type:"FETCH_PRODUCTS_REQUEST"})
-        axios.defaults.withCredentials = true
+        //axios.defaults.withCredentials = true
         axios.get(`${process.env.REACT_APP_API}/products`)
         .then(res=>dispatch({type:"FETCH_PRODUCTS_SUCCESS",payload: res.data}))
     }
 
     const onDelProduct = (product) => {
-        axios.defaults.withCredentials = true
+        //axios.defaults.withCredentials = true
         axios.delete(`${process.env.REACT_APP_API}/product/${product._id}`,
             {
                 headers:{

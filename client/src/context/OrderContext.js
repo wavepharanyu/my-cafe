@@ -18,14 +18,14 @@ const OrderProvider = ({children}) => {
     const [state,dispatch] = useReducer(OrderReducer,initState)
     
     const fetchOrder = () => {
-        axios.defaults.withCredentials = true
+        //axios.defaults.withCredentials = true
         dispatch({type: "FETCH_ORDERS_REQUEST"});
         axios.get(`${process.env.REACT_APP_API}/orders`)
         .then(res=>dispatch({type:"FETCH_ORDERS_SUCCESS",payload: res.data}))
     }
 
     const onDelOrder = (order) => {
-        axios.defaults.withCredentials = true
+        //axios.defaults.withCredentials = true
         axios.delete(`${process.env.REACT_APP_API}/order/${order._id}`,
             {
                 headers:{
